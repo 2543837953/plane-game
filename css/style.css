@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#intro{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rules {
+    width: 920px;
+    height: 545px;
+    position: absolute;
+    animation: rules_ani 0.5s linear;
+}
+@keyframes rules_ani {
+    from{
+        left: 100%;
+    }
+    to{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.rules li{
+    list-style: none;
+    margin: 10px 0;
+}
+.btn{
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#start{
+    padding: 20px;
+    background: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    border-color: #000;
+}
+#start:hover{
+    background:#f19e0d;
+}
+#start:hover::before{
+    content: '';
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: start_ani 0.2s linear;
+}
+@keyframes start_ani {
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width: 55px;
+        height: 55px;
+    }
+}
+#game_broad{
+    width: 100vw;
+    height: 100vh;
+    background: url("../images/background-1.jpg");
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    user-select: none;
+}
+#header_info{
+    display: flex;
+    width: 100%;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255,255,255,0.1);
+    padding: 20px  0;
+    width: 100%;
+    height: 100%;
+    z-index: 2001;
+}
+.fuel_info{
+    display: flex;
+    align-items: center;
+}
+#fuel{
+    width: 120px;
+    height: 30px;
+}
+.button{
+    padding: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+}
+#continue{
+    padding: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+}
+#player{
+    width: 108px;
+    height: 72px;
+    background: url("../images/ship_4_1.png");
+    background-position-y: -20px;
+    position: absolute;
+    animation: player_ani 0.5s steps(3) infinite;
+    z-index: 2000;
+}
+@keyframes player_ani {
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: 324px;
+    }
+}
+#player_missile,
+#enemy,
+#friend,
+#asteroid,
+#planet,
+#fuels{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.missile{
+    width: 20px;
+    height: 5px;
+    position: absolute;
+    z-index: 2000;
+}
+.player_missile{
+    background: lightgreen;
+}
+.enemy_missile{
+    background: red;
+}
+.enemy{
+    width: 80px;
+    height: 80px;
+    background: url("../images/ship_3.png");
+    position: absolute;
+    animation: enemy_ani 0.5s steps(4) infinite;
+    z-index: 2000;
+
+}
+@keyframes enemy_ani {
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: 320px;
+    }
+}
+.friend{
+    width: 80px;
+    height: 80px;
+    background: url("../images/ship_2.png");
+    position: absolute;
+    animation: enemy_ani 0.5s steps(4) infinite;
+    z-index: 2000;
+}
+.asteroid{
+    width: 80px;
+    height: 80px;
+    background:url("../images/aestroid_brown.png") ;
+    background-size:contain;
+    position: absolute;
+    animation: as_ani 5s linear infinite;
+    z-index: 2000;
+}
+@keyframes as_ani {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.fuels{
+    width: 20px;
+    height: 30px;
+    background: url("../images/fuels.png");
+    background-size: contain;
+    position: absolute;
+    animation: fuels_ani 0.5s linear infinite;
+    z-index: 2000;
+}
+@keyframes fuels_ani {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+.planet{
+    position: absolute;
+    animation: as_ani 20s linear infinite;
+    z-index: 0;
+}
+.dec_fuel_max{
+    animation: fuel_max 0.3s linear ;
+}
+@keyframes fuel_max {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.5);
+    }
+}
+.dec_fuel_min{
+    animation: fuel_min 0.3s linear ;
+}
+@keyframes fuel_min {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.5);
+    }
+}
+.arrow{
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    z-index: 2000;
+    cursor: pointer;
+}
+#up{
+    right: 100px;
+    bottom: 150px;
+}
+#down{
+    right: 100px;
+    bottom: 50px;
+}
+#left{
+    right: 150px;
+    bottom: 100px;
+}
+#right{
+    right: 50px;
+    bottom: 100px;
+}
+#over{
+    width: 250px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 2001;
+}
+.over_title{
+    color: red;
+}
+#ranking_table{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+tr>th,tr>td{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+#restart{
+    margin-top: 20px;
+    padding: 15px;
+    background: transparent;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+}
+.item:first-child{
+    display: none;
+}

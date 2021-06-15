@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="intro"  >
+        <div class="rules">
+            <h1>How to Play Star Battle.</h1>
+            <ul>
+                <li>1. Move the spaceship using the sensible areas in the screen;</li>
+                <li>2. The timer present the time lapsed;</li>
+                <li>3. The fuel counter show the remain fuel;</li>
+                <li>4. During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are presented in the space;</li>
+                <li>5. You can shoot pressing Space Bar;</li>
+                <li>6. If the spaceship hits a asteroid or another spaceship, you lose 15 points of fuel;</li>
+                <li>7. Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed;</li>
+                <li>8. Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed;</li>
+                <li>9. If you destroy a friendly spaceship, you lose 10 points;</li>
+                <li>10. During the flight, the spaceship needs to collect fuel in the space;</li>
+                <li>11. You can pause the game clicking in a button pause, or pressing the letter "p";</li>
+                <li>12. Go beyond all limits;</li>
+            </ul>
+            <p>Battle in Space with Star Battle Championship...</p>
+            <div class="btn">
+                <button id="start">Start Game</button>
+            </div>
+        </div>
+    </div>
+    <div id="game_broad" style="display: none;" >
+        <div id="header_info">
+            <div class="logo">
+                <img src="images/logo-01.png" alt="" width="150px" height="100px">
+            </div>
+            <div class="info">
+                <div class="timer">
+                    Time: <span id="time">0</span> s
+                </div>
+                <div class="fuel_info">
+                    <meter value="15" max="30" min="0" optimum="25" low="10" high="15" id="fuel"></meter>&nbsp; <span id="fuel_text">15/30</span>
+                </div>
+                <div class="score">
+                    Score: <span id="score">0</span>
+                </div>
+                <div class="scale">
+                    <button id="scale_max" class="button">A+</button>
+                    &nbsp;
+                    <button id="scale_min" class="button">A-</button>
+                </div>
+                <div class="pause">
+                    <button id="pause" class="button">Pause</button>
+                </div>
+                <div class="sound">
+                    <button id="sound" class="button">Sound OFF</button>
+                </div>
+            </div>
+        </div>
+        <div id="player" ></div>
+        <div id="player_missile">
+        </div>
+        <div id="enemy">
+        </div>
+        <div id="enemy_missile">
+
+        </div>
+        <div id="friend">
+
+        </div>
+        <div id="asteroid">
+
+        </div>
+        <div id="fuels">
+
+        </div>
+        <div id="planet">
+        </div>
+        <div id="over" style="display: none">
+            <h2 class="over_title">Game Over</h2>
+            <input type="text" id="name" placeholder="Name" autocomplete="off">
+            <div class="continue">
+                <button id="continue" disabled="disabled" >Continue</button>
+            </div>
+        </div>
+        <div class="arrow" id="up"></div>
+        <div class="arrow" id="down"></div>
+        <div class="arrow" id="left"></div>
+        <div class="arrow" id="right"></div>
+    </div>
+    <div id="ranking_table" style="display: none">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+                    <tr class="item">
+                        <td>1</td>
+                        <td>DMF</td>
+                        <td>100s</td>
+                        <td>100</td>
+                    </tr>
+            </tbody>
+        </table>
+        <div class="restart">
+            <button id="restart">Restart</button>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>
